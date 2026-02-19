@@ -1,0 +1,526 @@
+/* ===== Fonts (serif) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Lora:wght@400;500&display=swap');
+
+/* ===== Palette ===== */
+:root {
+    --bg-main: #F7F1F0;
+    --accent-soft: #C3A6A0;
+    --accent-strong: #A15C38;
+    --text-main: #262220;
+    --text-muted: #655b57;
+    --card-bg: #ffffff;
+  
+    /* New contrast colours */
+    --accent-news: #4A6073;       /* deep slate blue */
+    --accent-experience: #D4B483; /* soft brass */
+  }
+
+/* ===== Global base ===== */
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lora', 'Georgia', serif;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  /* subtle paper-like texture */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0),
+    radial-gradient(circle at 3px 3px, rgba(255,255,255,0.3) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+/* Links */
+
+a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #8d4e32; /* slightly darker accent */
+  text-decoration: none;
+}
+
+/* Strong text */
+
+strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Headings */
+
+h2 {
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.6rem;
+  color: var(--text-main);
+}
+
+/* Paper title in publications */
+
+.papertitle {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Name header */
+
+.name {
+  padding-top: 20px;
+  margin: 0;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Image overlay containers used in publications/projects */
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+/* Highlight span (if used) */
+
+span.highlight {
+  background-color: #fcefd7; /* softer than neon yellow */
+}
+
+/* Small buttons (Paper/Code/etc.) */
+
+.btn-custom-sm {
+  width: 65px;
+  padding: 1px 5px;
+  font-size: 12px;
+}
+
+/* Lists */
+
+ul {
+  list-style-position: outside;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.same-width {
+  font-family: monospace;
+}
+
+/* ===== News section ===== */
+
+.news-left {
+  padding: 10px 15px;
+  background: var(--card-bg);
+  border-left: 5px solid var(--accent-news);
+  border-radius: 12px 0 0 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.news-right {
+  padding: 10px;
+  width: 220px;
+  vertical-align: middle;
+  background: var(--card-bg);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.news-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 140px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Make news text a bit bigger and softer */
+
+.news-left ul li {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
+.news-left ul li a {
+  font-size: inherit;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.news-left ul li a:hover {
+  text-decoration: underline;
+}
+
+.news-left ul li b {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Smaller thumb column */
+
+.news-right {
+  width: 160px !important;
+}
+
+/* Optional carousel styling if used */
+
+.news-carousel {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.news-carousel .carousel-item img {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Smaller, subtle arrow controls */
+
+.news-carousel .carousel-control-prev,
+.news-carousel .carousel-control-next {
+  width: 26px;
+  opacity: 0.9;
+}
+
+.news-carousel .carousel-control-prev-icon,
+.news-carousel .carousel-control-next-icon {
+  background-size: 100% 100%;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.35));
+}
+
+.news-carousel .carousel-control-prev {
+  left: 2px;
+}
+
+.news-carousel .carousel-control-next {
+  right: 2px;
+}
+
+/* Hide indicators (dots) */
+
+.news-carousel .carousel-indicators {
+  display: none;
+}
+
+/* ===== Navbar (if used) ===== */
+
+.navbar-nav .nav-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  letter-spacing: 0.2px;
+  color: var(--text-muted) !important;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: var(--text-main) !important;
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+  border-bottom: 3px solid var(--accent-soft);
+  color: var(--accent-strong) !important;
+}
+
+/* ===== Intro section text ===== */
+
+.intro p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.intro a {
+  font-size: inherit;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.intro a:hover {
+  text-decoration: underline;
+}
+
+/* Milestone image inside rounded card */
+
+.milestone-image-card {
+  text-align: center;
+  padding: 10px 15px;
+  background: var(--card-bg);
+  border-left: 5px solid var(--accent-news);
+  border-radius: 12px 0 0 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.milestone-embedded-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ===== Profile carousel / image (if using Bootstrap carousel) ===== */
+
+.profile-carousel {
+  border-radius: 20%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.profile-carousel img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-carousel .carousel-control-prev,
+.profile-carousel .carousel-control-next {
+  width: 15%;
+}
+
+.profile-carousel .carousel-control-prev-icon,
+.profile-carousel .carousel-control-next-icon {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* Only show on hover */
+
+.profile-carousel .carousel-control-prev,
+.profile-carousel .carousel-control-next {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.profile-carousel:hover .carousel-control-prev,
+.profile-carousel:hover .carousel-control-next {
+  opacity: 0.9;
+}
+
+/* ===== Publications table ===== */
+
+#selected {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.publications td {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+/* First author highlight (you can use a span.me-author) */
+
+.me-author {
+  font-weight: 600;
+  background-color: #fcefd7;
+  padding: 2px 4px;
+  border-radius: 5px;
+  color: #000;
+}
+
+.me-author:hover {
+  background-color: #f9e4b7;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Venue */
+
+.publications td em {
+  font-style: italic;
+  color: var(--text-muted);
+  display: inline-block;
+  margin: 2px 0 5px 0;
+  font-size: 0.98rem;
+}
+
+/* Buttons inside publications */
+
+.publications .btn {
+  margin-right: 5px;
+}
+
+/* ===== Experience list with logos (if you add it) ===== */
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 20px;
+  background: var(--card-bg);
+  border-left: 5px solid var(--accent-experience);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.experience-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 8px 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.experience-list li::before {
+  content: none;
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  flex: 0 0 48px;
+  margin-right: 8px;
+}
+
+@media (min-width: 992px) {
+  .experience-logo {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+  }
+}
+
+.experience-list b {
+  color: #000;
+  font-weight: 600;
+}
+
+.experience-list a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.experience-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Section headers (e.g. Research, Projects) ===== */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.section-header:first-of-type {
+  margin-top: 30px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.section-header .btn {
+  font-size: 1.05rem;
+  padding: 3px 8px;
+}
+
+/* Project titles & thumbnails */
+
+.project-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.project-desc {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.project-thumb {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 230px;          /* consistent card height */
+  object-fit: contain;   /* FIT instead of CROP */
+  background: #f7f7f7;   /* soft neutral background */
+  border-radius: 12px;
+  border: 1px solid #eee;
+  padding: 6px;          /* breathing room */
+}
+
+
+
+
+/* Simple card titles/text (if you use Bootstrap cards) */
+
+.card-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
